@@ -5,7 +5,7 @@ import { Theme } from "@/hooks/use-theme";
 
 export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme, themeClasses }) => {
     return (
-        <section id="proyectos" className={`py-16 lg:py-24 ${theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"}`}>
+        <section id="proyectos" className={`py-16 lg:py-24 ${themeClasses.sectionBg} ${theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"}`}>
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">Proyectos destacados</h2>
@@ -19,8 +19,20 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            className={`${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.hoverCard} ${themeClasses.shadow} transition-colors`}
+                            className={`${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.hoverCard} ${themeClasses.shadow} transition-colors overflow-hidden`}
                         >
+                            {/* Image container with gradient background */}
+                            <div className="relative pt-5 pl-5 h-[16rem] bg-gradient-to-br from-red-400 to-rose-500 overflow-hidden  ">
+                                <img
+                                    src={project.image}
+                                    alt={`Proyecto ${project.name}`}
+                                    className="w-full h-auto object-cover rounded-tl-2xl"
+                                />
+
+                                {/* Overlay gradient for better text contrast */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+
                             <CardHeader>
                                 <CardTitle className={`${themeClasses.text} text-xl`}>{project.name}</CardTitle>
                                 <CardDescription className={`${themeClasses.textSecondary} text-base`}>
@@ -33,7 +45,7 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
                                         <Badge
                                             key={techIndex}
                                             variant="secondary"
-                                            className="bg-red-500/20 text-red-300 border-red-500/30 cursor-default"
+                                            className="bg-red-500/20 text-red-500 border-red-500 cursor-default"
                                         >
                                             {tech}
                                         </Badge>

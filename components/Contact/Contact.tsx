@@ -61,7 +61,7 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-3">
                                     <Mail className="h-5 w-5 text-red-400" />
-                                    <span className={themeClasses.textSecondary}>contacto@aedes.tech</span>
+                                    <span className={themeClasses.textSecondary}>aedestechnologies@gmail.com</span>
                                 </div>
                                 <div className="flex items-center space-x-3">
                                     <Linkedin className="h-5 w-5 text-red-400" />

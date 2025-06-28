@@ -87,41 +87,48 @@ export const team = [
     name: "Valentino Araya",
     role: "Full Stack Developer",
     description:
-      "Especialista en arquitectura de software con más de 8 años de experiencia liderando proyectos tecnológicos innovadores.",
+      "Especialista en el stack MERN con TypeScript con más de 2 años de experiencia construyendo proyectos. Estudiante avanzado de Ingeniería en Sistemas de la Información.",
+    image: "/team/valentino-araya.jpeg"
   },
   {
     name: "Faustino Duran",
     role: "Full Stack Developer",
     description:
-      "Experto en infraestructura cloud y automatización, enfocado en crear soluciones escalables y seguras.",
+      "Especialista en automatizaciones y gestión de herramientas en la nube. Estudiante avanzado de Ingeniería en Sistemas de la Información.",
+    image: "/team/faustino-duran.jpeg"
   },
   {
     name: "Ignacio Patiño",
     role: "Full Stack Developer",
-    description: "Diseñadora UX/UI apasionada por crear experiencias digitales intuitivas y visualmente impactantes.",
+    description: "Especialista en bases de datos, diseño de interfaces y desarrollo frontend. Estudiante avanzado de Ingeniería en Sistemas de la información.",
+    image: "/team/ignacio-patino.jpeg"
   },
 ]
 
 export const projects = [
   {
-    name: "EcoCommerce",
+    name: "SportyMaxx",
+    description: "E-commerce para una tienda de ropa. Cuenta con interfaces de administrador para subir, editar y eliminar productos. Integra MercadoPago para recibir pagos.",
+    technologies: ["React", "Express", "Node.js", "Firebase"],
+    image: "/projects/sportymaxx.webp"
+  },
+  {
+    name: "Sistema de gestión de turnos",
     description:
-      "Plataforma de e-commerce sostenible con sistema de gestión de inventario y analytics en tiempo real.",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+      "Plataforma de gestión de turnos para una clínica local. Cuenta con paneles de usuarios y de administradores.",
+    technologies: ["React", "Node.js", "Express", "MySQL"],
+    image: "/projects/turnero.webp"
   },
   {
-    name: "HealthTracker Pro",
-    description: "Aplicación móvil para seguimiento de salud con integración IoT y dashboard médico.",
-    technologies: ["React Native", "Python", "MongoDB", "Firebase"],
+    name: "VentaTrack",
+    description: "Software para gestión de ventas e inventario para kioscos y despensas, cuenta con historial y tabla de productos.",
+    technologies: ["React", "Firebase"],
+    image: "/projects/ventatrack.webp"
   },
   {
-    name: "SmartFactory",
-    description: "Sistema de automatización industrial con monitoreo en tiempo real y predictivo.",
-    technologies: ["Vue.js", "Django", "InfluxDB", "Docker"],
-  },
-  {
-    name: "EduPlatform",
-    description: "Plataforma educativa online con videoconferencias, evaluaciones automáticas y gamificación.",
-    technologies: ["Next.js", "Express", "MySQL", "WebRTC"],
+    name: "Bookify",
+    description: "Plataforma para que empresas puedan gestionar los turnos de sus clientes de manera efectiva. Cuenta con MercadoPago integrado, y notificaciones automatizadas.",
+    technologies: ["TypeScript", "React", "Express", "Node.js", "MongoDB"],
+    image: "/projects/bookify.webp"
   },
 ]

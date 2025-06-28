@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export const Services: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
     return (
-        <section id="servicios" className={`py-16 lg:py-24 ${themeClasses.sectionBg}`}>
+        <section id="servicios" className={`py-16 lg:py-24`}>
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">Nuestros servicios</h2>

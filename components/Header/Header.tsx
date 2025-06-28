@@ -19,8 +19,12 @@ export const Header: React.FC<Props> = ({ theme, toggleTheme, themeClasses }) =>
         >
             <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
                 <Link href="#incio" className="flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-rose-600 rounded-lg flex items-center justify-center">
-                        <span className="text-white font-bold text-lg">A</span>
+                    <div>
+                        <img
+                            src="/logo-aedes.png"
+                            alt="Logo Aedes"
+                            className="h-10 w-10 rounded-xl"
+                        />
                     </div>
                     <span className="text-xl font-bold">Aedes</span>
                 </Link>

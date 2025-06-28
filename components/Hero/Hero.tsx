@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export const Hero = ({ themeClasses }: { themeClasses: any }) => {
     const sectionRef = useRef<HTMLElement>(null)
@@ -9,9 +10,17 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
     const handleMouseMove = (e: React.MouseEvent) => {
         const rect = sectionRef.current?.getBoundingClientRect()
         if (!rect) return
+
+        // Calcular la posición relativa al contenedor
+        const relativeX = e.clientX - rect.left
+        const relativeY = e.clientY - rect.top
+
+        console.log("X:", relativeX)
+        console.log("Y:", relativeY)
+
         setCoords({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top,
+            x: relativeX - 300,
+            y: relativeY - 300,
         })
     }
 
@@ -26,7 +35,7 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
             <div
                 className="absolute w-[600px] h-[600px] rounded-full bg-red-500 blur-3xl opacity-30 pointer-events-none transition-all duration-100"
                 style={{
-                    transform: `translate(${coords.x - 1000}px, ${coords.y - 400}px)`,
+                    transform: `translate(${coords.x - 600}px, ${coords.y}px)`,
                 }}
             />
 
@@ -56,13 +65,15 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
                                 Comenzar proyecto
                                 <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="border-gray-300 text-gray-900 hover:bg-gray-300"
-                            >
-                                Ver nuestros servicios
-                            </Button>
+                            <Link href={"/#servicios"}>
+                                <Button
+                                    variant="outline"
+                                    size="lg"
+                                    className="border-gray-300 text-gray-900 hover:bg-gray-300"
+                                >
+                                    Ver nuestros servicios
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

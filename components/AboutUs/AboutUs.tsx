@@ -20,16 +20,15 @@ export const AboutUs: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                             className={`${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.hoverCard} ${themeClasses.shadow} transition-colors`}
                         >
                             <CardHeader className="text-center">
-                                <div className="w-24 h-24 bg-gradient-to-r from-red-500 to-rose-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                    <span className="text-2xl font-bold text-white">
-                                        {member.name
-                                            .split(" ")
-                                            .map((n) => n[0])
-                                            .join("")}
-                                    </span>
+                                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="h-full w-full object-cover"
+                                    />
                                 </div>
                                 <CardTitle className={themeClasses.text}>{member.name}</CardTitle>
-                                <CardDescription className="text-red-400 font-medium">{member.role}</CardDescription>
+                                <CardDescription className="text-red-500 font-semibold">{member.role}</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <p className={`${themeClasses.textSecondary} text-center`}>{member.description}</p>
