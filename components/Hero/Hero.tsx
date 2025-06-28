@@ -15,9 +15,6 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
         const relativeX = e.clientX - rect.left
         const relativeY = e.clientY - rect.top
 
-        console.log("X:", relativeX)
-        console.log("Y:", relativeY)
-
         setCoords({
             x: relativeX - 300,
             y: relativeY - 300,
@@ -29,18 +26,18 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
             id="inicio"
             ref={sectionRef}
             onMouseMove={handleMouseMove}
-            className="pt-24 h-[80vh] flex items-center justify-center relative overflow-hidden"
+            className="pt-24 h-[100vh] lg:h-[80vh] flex items-center justify-center relative overflow-hidden"
         >
             {/* Círculo rojo que sigue al mouse */}
             <div
-                className="absolute w-[600px] h-[600px] rounded-full bg-red-500 blur-3xl opacity-30 pointer-events-none transition-all duration-100"
+                className="absolute w-[800px] h-[800px] rounded-full bg-red-500 blur-[150px] opacity-30 pointer-events-none transition-all duration-100 max-lg:hidden"
                 style={{
                     transform: `translate(${coords.x - 600}px, ${coords.y}px)`,
                 }}
             />
 
             {/* Contenido */}
-            <div className="container mx-auto px-4 lg:px-6 relative z-10">
+            <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-1 gap-12 items-center">
                     <div className="space-y-8 flex flex-col items-center text-center">
                         <div className="space-y-4 flex flex-col items-center">
