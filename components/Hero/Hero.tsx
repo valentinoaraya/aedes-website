@@ -11,7 +11,7 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
         <section
             id="inicio"
             ref={sectionRef}
-            className="pt-24 h-[100vh] lg:h-[80vh] flex items-center justify-center relative overflow-hidden"
+            className="pt-24 h-[100vh] lg:h-[80vh] flex items-center justify-center relative overflow-hidden [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#f43f5e_100%)] shadow-xl"
         >
             {/* Contenido */}
             <div className="container mx-auto px-6 relative z-10">
@@ -32,7 +32,10 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <ButtonWithEmoji />
+                            <ButtonWithEmoji emoji="🚀">
+                                Comenzar Proyecto
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                            </ButtonWithEmoji>
                             <Link href={"/#servicios"}>
                                 <Button
                                     variant="outline"

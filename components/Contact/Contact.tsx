@@ -2,12 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Linkedin, Github } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Github, MessageSquarePlus } from "lucide-react";
 import { LinkPreview } from "../link-preview";
+import { ButtonWithEmoji } from "../button-with-emoji";
 
 export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
     return (
-        <section id="contacto" className="py-16 lg:py-24">
+        <section id="contacto" className={`py-16 lg:py-24 ${themeClasses.sectionBg}`}>
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">Contanos tu idea, la hacemos realidad</h2>
@@ -18,7 +19,7 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12">
-                    <Card className={`${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.shadow}`}>
+                    <Card className={`${themeClasses.cardBg} ${themeClasses.cardBorder} shadow-xl`}>
                         <CardHeader>
                             <CardTitle className={`${themeClasses.text} text-2xl`}>Envianos un mensaje</CardTitle>
                             <CardDescription className={themeClasses.textSecondary}>
@@ -42,6 +43,13 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                                 />
                             </div>
                             <div className="space-y-2">
+                                <label className={`text-sm font-medium ${themeClasses.textSecondary}`}>Asunto</label>
+                                <Input
+                                    placeholder="Idea, proyecto o consulta"
+                                    className={`${themeClasses.inputBg} ${themeClasses.inputBorder} ${themeClasses.inputText} ${themeClasses.inputPlaceholder}`}
+                                />
+                            </div>
+                            <div className="space-y-2">
                                 <label className={`text-sm font-medium ${themeClasses.textSecondary}`}>Mensaje</label>
                                 <Textarea
                                     placeholder="Contanos sobre tu proyecto o idea..."
@@ -49,10 +57,10 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                                     className={`${themeClasses.inputBg} ${themeClasses.inputBorder} ${themeClasses.inputText} ${themeClasses.inputPlaceholder}`}
                                 />
                             </div>
-                            <Button className="w-full bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700">
+                            <ButtonWithEmoji emoji="📩" className="w-full" distance="translate-x-[500px]">
                                 Enviar mensaje
                                 <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
+                            </ButtonWithEmoji>
                         </CardContent>
                     </Card>
 
@@ -85,6 +93,7 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                                 Transformemos juntos tu idea en una solución tecnológica innovadora que impulse tu negocio.
                             </p>
                             <Button variant="outline" className="border-red-500 text-red-400 hover:bg-red-500/10">
+                                <MessageSquarePlus className="text-red-400" />
                                 Agendar reunión
                             </Button>
                         </div>

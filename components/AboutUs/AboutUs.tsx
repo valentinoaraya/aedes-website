@@ -3,7 +3,7 @@ import { HoverEffect } from "../card-hover-effect";
 
 export const AboutUs: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
     return (
-        <section id="nosotros" className={`py-16 lg:py-24 ${themeClasses.sectionBg}`}>
+        <section id="nosotros" className={`py-16 lg:py-24 `}>
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">Conocé nuestro equipo</h2>

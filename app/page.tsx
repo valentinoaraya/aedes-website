@@ -42,11 +42,11 @@ export default function AedesWebsite() {
       {/* Hero Section */}
       <Hero themeClasses={themeClasses} />
 
-      {/* Proyectos */}
-      <Projects theme={theme} themeClasses={themeClasses} />
-
       {/* Servicios */}
       <Services themeClasses={themeClasses} />
+
+      {/* Proyectos */}
+      <Projects theme={theme} themeClasses={themeClasses} />
 
       {/* Quiénes somos */}
       <AboutUs themeClasses={themeClasses} />

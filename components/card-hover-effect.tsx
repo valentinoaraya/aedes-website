@@ -35,9 +35,13 @@ export const HoverEffect = ({
             {members.map((member, idx) => (
                 <div
                     key={idx}
-                    className="relative group  block p-2 h-full w-full"
+                    className={`
+                        relative group  block p-2 h-full w-full
+                        ${idx === 2 ? "md:col-span-2 md:justify-self-center lg:col-span-1" : ""}
+                    `}
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
+
                 >
                     <AnimatePresence>
                         {hoveredIndex === idx && (

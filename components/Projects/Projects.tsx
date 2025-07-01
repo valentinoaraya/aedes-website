@@ -5,8 +5,11 @@ import { Theme } from "@/hooks/use-theme";
 
 export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme, themeClasses }) => {
     return (
-        <section id="proyectos" className={`py-16 lg:py-24 ${themeClasses.sectionBg} ${theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"}`}>
-            <div className="container mx-auto px-4 lg:px-6">
+        <section id="proyectos" className={`relative py-16 lg:py-24 ${theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"}`}>
+
+            <div className="absolute bottom-auto left-auto right-0 top-0 h-full w-full -translate-x-[20%] rounded-full bg-rose-200 opacity-50 blur-[80px] z-0">
+            </div>
+            <div className="container mx-auto px-4 lg:px-6 z-10 relative">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">Proyectos destacados</h2>
                     <p className={`text-xl ${themeClasses.textSecondary} max-w-3xl mx-auto`}>
@@ -19,7 +22,7 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            className={`group ${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.shadow} transition-colors overflow-hidden`}
+                            className={`group ${themeClasses.cardBg} ${themeClasses.shadow} transition-colors overflow-hidden`}
                         >
                             {/* Image container with gradient background */}
                             <div

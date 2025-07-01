@@ -32,16 +32,16 @@ export const Header: React.FC<Props> = ({ theme, toggleTheme, themeClasses }) =>
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex space-x-8 items-center">
                     <Link
-                        href="#proyectos"
-                        className={`${themeClasses.textSecondary} ${themeClasses.navHover} transition-colors`}
-                    >
-                        Proyectos
-                    </Link>
-                    <Link
                         href="#servicios"
                         className={`${themeClasses.textSecondary} ${themeClasses.navHover} transition-colors`}
                     >
                         Servicios
+                    </Link>
+                    <Link
+                        href="#proyectos"
+                        className={`${themeClasses.textSecondary} ${themeClasses.navHover} transition-colors`}
+                    >
+                        Proyectos
                     </Link>
                     <Link
                         href="#nosotros"
@@ -55,12 +55,12 @@ export const Header: React.FC<Props> = ({ theme, toggleTheme, themeClasses }) =>
                     >
                         Contacto
                     </Link>
-                    <ThemeToggle theme={theme} onToggle={toggleTheme} />
+                    {/* <ThemeToggle theme={theme} onToggle={toggleTheme} /> */}
                 </nav>
 
                 {/* Mobile Menu Button and Theme Toggle */}
                 <div className="md:hidden flex items-center space-x-2">
-                    <ThemeToggle theme={theme} onToggle={toggleTheme} />
+                    {/* <ThemeToggle theme={theme} onToggle={toggleTheme} /> */}
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                     </button>
@@ -78,12 +78,6 @@ export const Header: React.FC<Props> = ({ theme, toggleTheme, themeClasses }) =>
                             Inicio
                         </Link>
                         <Link
-                            href="#nosotros"
-                            className={`${themeClasses.textSecondary} ${themeClasses.navHover} transition-colors`}
-                        >
-                            Quiénes somos
-                        </Link>
-                        <Link
                             href="#servicios"
                             className={`${themeClasses.textSecondary} ${themeClasses.navHover} transition-colors`}
                         >
@@ -94,6 +88,12 @@ export const Header: React.FC<Props> = ({ theme, toggleTheme, themeClasses }) =>
                             className={`${themeClasses.textSecondary} ${themeClasses.navHover} transition-colors`}
                         >
                             Proyectos
+                        </Link>
+                        <Link
+                            href="#nosotros"
+                            className={`${themeClasses.textSecondary} ${themeClasses.navHover} transition-colors`}
+                        >
+                            Quiénes somos
                         </Link>
                         <Link
                             href="#contacto"
