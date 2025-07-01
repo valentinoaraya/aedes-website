@@ -7,8 +7,7 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
     return (
         <section id="proyectos" className={`relative py-16 lg:py-24 ${theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"}`}>
 
-            <div className="absolute bottom-auto left-auto right-0 top-0 h-full w-full -translate-x-[20%] rounded-full bg-rose-200 opacity-50 blur-[80px] z-0">
-            </div>
+            <div className="absolute bottom-auto left-auto right-0 top-0 h-full w-full rounded-full bg-rose-300 opacity-50 blur-[80px] z-0 will-change-transform" style={{ WebkitTransform: "translateZ(0)" }}></div>
             <div className="container mx-auto px-4 lg:px-6 z-10 relative">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">Proyectos destacados</h2>
@@ -22,16 +21,16 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            className={`group ${themeClasses.cardBg} ${themeClasses.shadow} transition-colors overflow-hidden`}
+                            className={`group ${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.hoverCard} ${themeClasses.shadow} transition-colors overflow-hidden`}
                         >
                             {/* Image container with gradient background */}
                             <div
-                                className="relative pt-5 pl-5 h-auto bg-gradient-to-br from-red-500 to-rose-600 overflow-hidden transition-all duration-300 group-hover:pt-0 group-hover:pl-0"
+                                className="relative"
                             >
                                 <img
                                     src={project.image}
                                     alt={`Proyecto ${project.name}`}
-                                    className="w-full h-auto object-cover rounded-tl-2xl transition-all duration-300 group-hover:rounded-none"
+                                    className="w-full h-auto object-cover"
                                 />
 
                                 {/* Overlay gradient for better text contrast */}
