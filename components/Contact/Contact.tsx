@@ -5,8 +5,58 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Linkedin, Github, MessageSquarePlus } from "lucide-react";
 import { LinkPreview } from "../link-preview";
 import { ButtonWithEmoji } from "../button-with-emoji";
+import emailjs from "@emailjs/browser"
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setIsLoading(true);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        emailjs.send(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+            {
+                title: formData.get("title") as string,
+                name: formData.get("name") as string,
+                message: formData.get("message") as string,
+                email: formData.get("email") as string,
+            },
+            {
+                publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
+                limitRate: {
+                    id: "app",
+                    throttle: 10000,
+                }
+            }
+        ).then(() => {
+            setIsLoading(false);
+            Swal.fire({
+                title: "Consulta enviada correctamente.",
+                text: "Nos pondremos en contacto contigo a la brevedad.",
+                icon: "success",
+                draggable: false,
+                confirmButtonColor: "#dc2626",
+            });
+            form.reset();
+        }).catch((error) => {
+            console.error("Error al enviar el email:", error);
+            setIsLoading(false);
+            Swal.fire({
+                title: "Error al enviar la consulta.",
+                text: "Por favor, intenta nuevamente más tarde.",
+                icon: "error",
+                draggable: false,
+                confirmButtonColor: "#dc2626",
+            });
+        })
+    }
+
     return (
         <section id="contacto" className={`py-16 lg:py-24 ${themeClasses.sectionBg}`}>
             <div className="container mx-auto px-4 lg:px-6">
@@ -18,7 +68,7 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12">
+                <form className="grid lg:grid-cols-2 gap-12" onSubmit={sendEmail}>
                     <Card className={`${themeClasses.cardBg} ${themeClasses.cardBorder} shadow-xl`}>
                         <CardHeader>
                             <CardTitle className={`${themeClasses.text} text-2xl`}>Envianos un mensaje</CardTitle>
@@ -30,6 +80,8 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                             <div className="space-y-2">
                                 <label className={`text-sm font-medium ${themeClasses.textSecondary}`}>Nombre completo</label>
                                 <Input
+                                    required
+                                    name="name"
                                     placeholder="Tu nombre completo"
                                     className={`${themeClasses.inputBg} ${themeClasses.inputBorder} ${themeClasses.inputText} ${themeClasses.inputPlaceholder}`}
                                 />
@@ -37,6 +89,8 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                             <div className="space-y-2">
                                 <label className={`text-sm font-medium ${themeClasses.textSecondary}`}>Email</label>
                                 <Input
+                                    required
+                                    name="email"
                                     type="email"
                                     placeholder="tu@email.com"
                                     className={`${themeClasses.inputBg} ${themeClasses.inputBorder} ${themeClasses.inputText} ${themeClasses.inputPlaceholder}`}
@@ -45,6 +99,8 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                             <div className="space-y-2">
                                 <label className={`text-sm font-medium ${themeClasses.textSecondary}`}>Asunto</label>
                                 <Input
+                                    required
+                                    name="title"
                                     placeholder="Idea, proyecto o consulta"
                                     className={`${themeClasses.inputBg} ${themeClasses.inputBorder} ${themeClasses.inputText} ${themeClasses.inputPlaceholder}`}
                                 />
@@ -52,12 +108,20 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                             <div className="space-y-2">
                                 <label className={`text-sm font-medium ${themeClasses.textSecondary}`}>Mensaje</label>
                                 <Textarea
+                                    required
+                                    name="message"
                                     placeholder="Contanos sobre tu proyecto o idea..."
                                     rows={5}
                                     className={`${themeClasses.inputBg} ${themeClasses.inputBorder} ${themeClasses.inputText} ${themeClasses.inputPlaceholder}`}
                                 />
                             </div>
-                            <ButtonWithEmoji emoji="📩" className="w-full" distance="translate-x-[500px]">
+                            <ButtonWithEmoji
+                                emoji="📩"
+                                className="w-full"
+                                type="submit"
+                                isLoading={isLoading}
+                                disabled={isLoading}
+                            >
                                 Enviar mensaje
                                 <ArrowRight className="ml-2 h-4 w-4" />
                             </ButtonWithEmoji>
@@ -92,13 +156,17 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                             <p className={`${themeClasses.textSecondary} mb-4`}>
                                 Transformemos juntos tu idea en una solución tecnológica innovadora que impulse tu negocio.
                             </p>
-                            <Button variant="outline" className="border-red-500 text-red-400 hover:bg-red-500/10">
-                                <MessageSquarePlus className="text-red-400" />
-                                Agendar reunión
-                            </Button>
+                            <div
+                                onClick={() => { window.open("https://wa.me/5492625660880?text=%C2%A1Hola!%20Quiero%20iniciar%20un%20proyecto%20con%20Aedes.%20%C2%BFPodemos%20hablar%3F", '_blank') }}
+                            >
+                                <Button variant="outline" className="border-red-500 text-red-400 hover:bg-red-500/10">
+                                    <MessageSquarePlus className="text-red-400" />
+                                    Agendar reunión
+                                </Button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     );

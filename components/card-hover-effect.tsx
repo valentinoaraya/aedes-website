@@ -36,7 +36,7 @@ export const HoverEffect = ({
                 <div
                     key={idx}
                     className={`
-                        relative group  block p-2 h-full w-full
+                        relative group  block p-2 h-full w-full flex
                         ${idx === 2 ? "md:col-span-2 md:justify-self-center lg:col-span-1" : ""}
                     `}
                     onMouseEnter={() => setHoveredIndex(idx)}
@@ -62,7 +62,7 @@ export const HoverEffect = ({
                     </AnimatePresence>
                     <div className="h-full w-full overflow-hidden shadow-lg group-hover:border-slate-700 relative z-20">
                         <Card
-                            className={`h-full ${themeClasses.cardBg} ${themeClasses.cardBorder} transition-colors relative z-50`}
+                            className={`h-full ${themeClasses.cardBg} ${themeClasses.cardBorder} transition-colors relative z-50 flex flex-col justify-between items-center`}
                         >
                             <CardHeader className="text-center">
                                 <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">

@@ -32,7 +32,10 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <ButtonWithEmoji emoji="🚀">
+                            <ButtonWithEmoji
+                                emoji="🚀"
+                                onSubmit={() => { window.open("https://wa.me/5492625660880?text=%C2%A1Hola!%20Quiero%20iniciar%20un%20proyecto%20con%20Aedes.%20%C2%BFPodemos%20hablar%3F", '_blank') }}
+                            >
                                 Comenzar Proyecto
                                 <ArrowRight className="ml-2 h-4 w-4" />
                             </ButtonWithEmoji>
