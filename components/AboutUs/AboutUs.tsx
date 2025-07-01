@@ -1,5 +1,5 @@
 import { team } from "@/lib/utils";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { HoverEffect } from "../card-hover-effect";
 
 export const AboutUs: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
     return (
@@ -7,34 +7,15 @@ export const AboutUs: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-bold mb-4">Conocé nuestro equipo</h2>
-                    <p className={`text-xl ${themeClasses.textSecondary} max-w-3xl mx-auto`}>
-                        Somos un equipo apasionado de profesionales con experiencia en las últimas tecnologías, comprometidos con
-                        la excelencia y la innovación.
+                    <p className={`text-xl ${themeClasses.textSecondary} max-w-5xl mx-auto pt-5`}>
+                        Aedes es conformado por tres amigos. Estudiantes de Ingeniería en Sistemas que compartimos una misma pasión: la programación y la resolución de problemas.
+                    </p>
+                    <p className={`text-xl ${themeClasses.textSecondary} max-w-5xl mx-auto pt-5`}>
+                        Más que una empresa, somos un equipo que disfruta lo que hace y que cree que la tecnología puede cambiar la forma en que vivimos y trabajamos.
                     </p>
                 </div>
-
-                <div className="grid md:grid-cols-3 gap-8">
-                    {team.map((member, index) => (
-                        <Card
-                            key={index}
-                            className={`${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.hoverCard} ${themeClasses.shadow} transition-colors`}
-                        >
-                            <CardHeader className="text-center">
-                                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="h-full w-full object-cover"
-                                    />
-                                </div>
-                                <CardTitle className={themeClasses.text}>{member.name}</CardTitle>
-                                <CardDescription className="text-red-500 font-semibold">{member.role}</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <p className={`${themeClasses.textSecondary} text-center`}>{member.description}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
+                <div className="max-w-5x1 mx-auto">
+                    <HoverEffect members={team} themeClasses={themeClasses} />
                 </div>
             </div>
         </section>

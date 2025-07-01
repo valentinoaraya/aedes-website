@@ -19,18 +19,20 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
                     {projects.map((project, index) => (
                         <Card
                             key={index}
-                            className={`${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.hoverCard} ${themeClasses.shadow} transition-colors overflow-hidden`}
+                            className={`group ${themeClasses.cardBg} ${themeClasses.cardBorder} ${themeClasses.shadow} transition-colors overflow-hidden`}
                         >
                             {/* Image container with gradient background */}
-                            <div className="relative pt-5 pl-5 h-[16rem] bg-gradient-to-br from-red-400 to-rose-500 overflow-hidden  ">
+                            <div
+                                className="relative pt-5 pl-5 h-auto bg-gradient-to-br from-red-500 to-rose-600 overflow-hidden transition-all duration-300 group-hover:pt-0 group-hover:pl-0"
+                            >
                                 <img
                                     src={project.image}
                                     alt={`Proyecto ${project.name}`}
-                                    className="w-full h-auto object-cover rounded-tl-2xl"
+                                    className="w-full h-auto object-cover rounded-tl-2xl transition-all duration-300 group-hover:rounded-none"
                                 />
 
                                 {/* Overlay gradient for better text contrast */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
                             </div>
 
                             <CardHeader>
@@ -39,6 +41,7 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
                                     {project.description}
                                 </CardDescription>
                             </CardHeader>
+
                             <CardContent>
                                 <div className="flex flex-wrap gap-2">
                                     {project.technologies.map((tech, techIndex) => (
@@ -53,6 +56,7 @@ export const Projects: React.FC<{ theme: Theme, themeClasses: any }> = ({ theme,
                                 </div>
                             </CardContent>
                         </Card>
+
                     ))}
                 </div>
             </div>

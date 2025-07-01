@@ -88,20 +88,32 @@ export const team = [
     role: "Full Stack Developer",
     description:
       "Especialista en el stack MERN con TypeScript con más de 2 años de experiencia construyendo proyectos. Estudiante avanzado de Ingeniería en Sistemas de la Información.",
-    image: "/team/valentino-araya.jpeg"
+    image: "/team/valentino-araya.jpeg",
+    github: "https://github.com/valentinoaraya",
+    linkedin: "https://www.linkedin.com/in/valentinoaraya",
+    githubImage: "/team/valentino-araya-github.png",
+    linkedinImage: "/team/valentino-araya-linkedin.png",
   },
   {
     name: "Faustino Duran",
     role: "Full Stack Developer",
     description:
       "Especialista en automatizaciones y gestión de herramientas en la nube. Estudiante avanzado de Ingeniería en Sistemas de la Información.",
-    image: "/team/faustino-duran.jpeg"
+    image: "/team/faustino-duran.jpeg",
+    github: "https://github.com/FaustinoDuran",
+    linkedin: "https://www.linkedin.com/in/faustino-duran-a8b17a273/",
+    githubImage: "/team/faustino-duran-github.png",
+    linkedinImage: "/team/faustino-duran-linkedin.png",
   },
   {
     name: "Ignacio Patiño",
     role: "Full Stack Developer",
     description: "Especialista en bases de datos, diseño de interfaces y desarrollo frontend. Estudiante avanzado de Ingeniería en Sistemas de la información.",
-    image: "/team/ignacio-patino.jpeg"
+    image: "/team/ignacio-patino.jpeg",
+    github: "https://github.com/nachopatinoc",
+    linkedin: "https://www.linkedin.com/in/ignacio-pati%C3%B1o-851701160/",
+    githubImage: "/team/ignacio-patino-github.png",
+    linkedinImage: "/team/ignacio-patino-linkedin.png",
   },
 ]
 
