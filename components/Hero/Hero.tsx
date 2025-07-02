@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowDown } from "lucide-react"
 import Link from "next/link"
 import { ButtonWithEmoji } from "../button-with-emoji"
 
@@ -11,7 +11,7 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
         <section
             id="inicio"
             ref={sectionRef}
-            className="pt-24 h-[100vh] lg:h-[80vh] flex items-center justify-center relative overflow-hidden [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#f43f5e_100%)] shadow-xl"
+            className="pt-24 h-[100vh] flex items-center justify-center relative overflow-hidden [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#f43f5e_100%)] shadow-xl"
         >
             {/* Contenido */}
             <div className="container mx-auto px-6 relative z-10">
@@ -51,6 +51,12 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 animate-bounce cursor-pointer" onClick={() => {
+                const nextSection = document.getElementById('servicios');
+                if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
+            }}>
+                <ArrowDown className="h-10 w-10 text-white drop-shadow-lg" />
             </div>
         </section>
     )
