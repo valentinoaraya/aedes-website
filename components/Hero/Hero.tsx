@@ -14,7 +14,7 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
             className="pt-24 h-[100vh] flex items-center justify-center relative overflow-hidden [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#f43f5e_100%)] shadow-xl"
         >
             {/* Contenido */}
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="relative container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-1 gap-12 items-center">
                     <div className="space-y-8 flex flex-col items-center text-center">
                         <div className="space-y-4 flex flex-col items-center">
@@ -52,7 +52,8 @@ export const Hero = ({ themeClasses }: { themeClasses: any }) => {
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 animate-bounce cursor-pointer" onClick={() => {
+            {/* Flecha scroll absolutamente centrada */}
+            <div className="max-md:hidden absolute cursor-pointer bottom-6 -translate-x-1/2 flex flex-col items-center justify-center z-20 animate-bounce" onClick={() => {
                 const nextSection = document.getElementById('servicios');
                 if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
             }}>
