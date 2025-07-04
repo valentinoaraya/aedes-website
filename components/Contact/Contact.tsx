@@ -138,8 +138,8 @@ export const Contact: React.FC<{ themeClasses: any }> = ({ themeClasses }) => {
                                 </div>
                                 <div className="flex items-center space-x-3">
                                     <Linkedin className="h-5 w-5 text-red-400" />
-                                    <LinkPreview url="https://www.linkedin.com/in/aedestech/" isStatic={true} imageSrc="/team/aedes-linkedin.png">
-                                        <span className={themeClasses.textSecondary}>linkedin.com/in/aedestech</span>
+                                    <LinkPreview url="https://www.linkedin.com/company/aedestech/" isStatic={true} imageSrc="/team/aedes-linkedin.png">
+                                        <span className={themeClasses.textSecondary}>linkedin.com/company/aedestech</span>
                                     </LinkPreview>
                                 </div>
                                 <div className="flex items-center space-x-3">
