@@ -119,17 +119,16 @@ export const team = [
 
 export const projects = [
   {
+    name: "Bookify",
+    description: "Plataforma para que puedas gestionar los turnos de tus clientes de manera efectiva. Cuenta con MercadoPago integrado y recordatorios automáticos.",
+    technologies: ["TypeScript", "React", "Express", "Node.js", "MongoDB"],
+    image: "/projects/bookify.webp"
+  },
+  {
     name: "SportyMaxx",
     description: "E-commerce para una tienda de ropa. Cuenta con interfaces de administrador para subir, editar y eliminar productos. Integra MercadoPago para recibir pagos.",
     technologies: ["React", "Express", "Node.js", "Firebase"],
     image: "/projects/sportymaxx.webp"
-  },
-  {
-    name: "Sistema de gestión de turnos",
-    description:
-      "Plataforma de gestión de turnos para una clínica local. Cuenta con paneles de usuarios y de administradores.",
-    technologies: ["React", "Node.js", "Express", "MySQL"],
-    image: "/projects/turnero.webp"
   },
   {
     name: "VentaTrack",
@@ -138,9 +137,10 @@ export const projects = [
     image: "/projects/ventatrack.webp"
   },
   {
-    name: "Bookify",
-    description: "Plataforma para que empresas puedan gestionar los turnos de sus clientes de manera efectiva. Cuenta con MercadoPago integrado, y notificaciones automatizadas.",
-    technologies: ["TypeScript", "React", "Express", "Node.js", "MongoDB"],
-    image: "/projects/bookify.webp"
+    name: "Sistema de gestión de turnos",
+    description:
+      "Plataforma de gestión de turnos para una clínica local. Cuenta con paneles de usuarios y de administradores.",
+    technologies: ["React", "Node.js", "Express", "MySQL"],
+    image: "/projects/turnero.webp"
   },
 ]
